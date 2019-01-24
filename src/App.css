@@ -12,21 +12,22 @@
 }
 
 .App-header {
-
+  background: #ff420957;
 }
 
 .App-link {
-  color: #61dafb;
+  color: red;
 }
 .main {
   display: flex;
 }
+/****/
 .movies{
-  width:100%;
+  width:75%;
 }
 
 .list{
-  width: 200px;
+  width: 25%;
 }
 
 .movies, .list {
@@ -66,8 +67,9 @@ em,
 li,
 a {
   padding: 15px;
+  list-style: none;
 }
 
 a:hover {
-  color: red;
+  color: #ff420957;
 }

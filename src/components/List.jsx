@@ -10,8 +10,8 @@ class List extends Component{
  
     return(
       <div className="list">
-        <h1>Movie List</h1>
-          <ul>{listItems}</ul>
+        <h1>Top Featured Movies</h1>
+          <ul><a href="#">{listItems}</a></ul>
       </div>
     );
   }

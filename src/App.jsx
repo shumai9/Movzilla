@@ -13,7 +13,7 @@ class App extends Component {
     }
   }
   componentDidMount(){
-    fetch("http://www.omdbapi.com/?s='the'&type=movie&page=1-10&apikey=60f51f50")
+    fetch("http://www.omdbapi.com/?s='the'&type=movie&page=10&apikey=60f51f50")
     .then(res => res.json())
     .then(result => {
       if(result.Response){
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   render() {
-     const movies = this.state.data;
+    const movies = this.state.data;
     return (
       <div className="App">
         <header className="App-header">
