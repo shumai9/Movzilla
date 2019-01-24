@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
+import { 
+  BrowserRouter,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom';
 import Movie from './components/Movie';
 import List from './components/List';
+import Newly from './components/Newly'
+import Nav from './components/Nav';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
 import './style/App.css';
 
 class App extends Component {
@@ -28,19 +39,50 @@ class App extends Component {
       e => {console.log("From movie", e);}
     );
   }
-
   render() {
     const movies = this.state.data;
     return (
-      <div className="App">
-        <header className="App-header">
-         <h1 className="App-logo">MOVzila</h1>
-        </header>
-        <div className="main">
-          <List movies={movies}/>
-          <Movie movies={movies}/>
+      <BrowserRouter>
+        <div className="App">
+          <header className="App-header">          
+            <Nav />
+            <h1 className="App-logo">MOVzila</h1>
+          </header>
+          <div className="container">
+            <List movies={movies}/>
+            <div className="main">            
+              <Switch>
+                <Route exact path="/" render={null} />
+                <Route exact path="/home"
+                  render={props => (
+                    <Home {...props}/>
+                  )}
+                />
+                <Route path="/about"
+                  render={props => (
+                    <About {...props}/>
+                  )}
+                />
+                <Route path="/new_releases"
+                  render={props => (
+                    <Newly {...props}/>
+                  )}
+                />
+                <Route path="/contact"
+                  render={props => (
+                    <Contact {...props}/>
+                  )}
+                />
+                <Route path="/movies"
+                  render={props => (
+                    <Movie movies={movies}/>
+                  )}
+                />                
+              </Switch>
+              </div>
+          </div>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }

@@ -12,13 +12,13 @@
 }
 
 .App-header {
-  background: #ff420957;
+  
 }
 
 .App-link {
   color: red;
 }
-.main {
+.container {
   display: flex;
 }
 /****************/

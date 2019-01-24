@@ -5,7 +5,7 @@ class List extends Component{
   render(){
     const data = this.props.movies;
     return(
-      <div className="list">
+      <div className="movie-list">
         <h1>Top Featured Movies</h1>
           <ul>
           { data ?
