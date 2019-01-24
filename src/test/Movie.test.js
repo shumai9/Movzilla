@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Newly from './Newly';
+import Movie from '../components/Movie';
 
-it('renders with out failing', () =>{
+it('renders with out  failing', () =>{
   const div = document.createElement('div');
-  ReactDOM.render(<Newly/>, div);
+  ReactDOM.render(<Movie />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+
