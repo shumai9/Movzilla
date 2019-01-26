@@ -13,14 +13,13 @@ import About from './components/About';
 import Contact from './components/Contact';
 import './style/App.css';
 
-const Apikey = `${process.env.REACT_APP_OMDb_API_KEY}`;
-
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
       loaded: false,
       data: '',
+      selectedMovie: '',
       next: null
     }
   }
@@ -40,8 +39,17 @@ class App extends Component {
       e => {console.log("From movie", e);}
     );
   }
+  selectedMovie =(e) =>{
+    this.setState({
+      selectedMovie: e.target.innerHTML
+    });
+  }
+  clearSelection =()=> {
+    this.setState({
+      selectedMovie: ''
+    });
+  }
   render() {
-    const movies = this.state.data;
     return (
       <BrowserRouter>
         <div className="App">
@@ -50,7 +58,10 @@ class App extends Component {
             <h1 className="App-logo">MOVzila</h1>
           </header>
           <div className="container">
-            <List movies={movies}/>
+            <List 
+              onSelectedMovie={this.selectedMovie}
+              movies={this.state.data}
+            />
             <div className="main">            
               <Switch>
                 <Route exact path="/" render={null} />
@@ -76,7 +87,11 @@ class App extends Component {
                 />
                 <Route path="/movies"
                   render={props => (
-                    <Movie movies={movies}/>
+                    <Movie
+                      featured={this.state.data}
+                      movie={this.state.selectedMovie}
+                      clearSelected={this.clearSelection} 
+                    />
                   )}
                 />                
               </Switch>

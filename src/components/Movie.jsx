@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Screen from './Screen';
 import '../style/Movie.css';
 
 const Api_key = `${process.env.REACT_APP_OMDb_API_KEY}`;
@@ -12,6 +13,7 @@ class Movie extends Component {
       data: null,
       count: 0,
       next: null,
+      featured: this.props.featured
     }
   }
 
@@ -19,6 +21,7 @@ class Movie extends Component {
     e.target.value = ''
     return <p>"please write title to search"</p>
   }
+  
   handleSearch=(e)=>{
     e.preventDefault();    
     let req = document.querySelector('.search').value;
@@ -48,6 +51,9 @@ class Movie extends Component {
   }
 
   render(){
+    const clearSelected = this.props.clearSelected;
+    const movie= this.props.movie;
+    const featured= this.props.featured;
   
   return(
     <div className="movies">
@@ -69,21 +75,24 @@ class Movie extends Component {
       </div>
       <div className="wrapper" >
         { this.state.data ? 
-          (Object.keys(this.state.data).map((line) =>{
+          (Object.values(this.state.data).map((line) =>{
             return(
-              <div className="film" key={line}> 
-                <h2 >{this.state.data[line].Title}</h2>
+              <div className="film" key={line.imdbID}> 
+                <h2 >{line.Title}</h2>
                 <img 
-                  src={this.state.data[line].Poster}
-                  alt={`${this.state.data[line].Title}`}
+                  src={line.Poster}
+                  alt={`${line.Title}`}
                 />          
-                <p>{this.state.data[line].Year}</p> 
-                <p>{this.state.data[line].Type}</p>
+                <p>{line.Year}</p> 
+                <p>{line.Type}</p>
               </div>
             ) 
           })
           ) : (
-            null
+            <Screen 
+            movie={movie}
+            featured={featured} 
+            clearSelected={clearSelected} />
           )
         }
       </div>      

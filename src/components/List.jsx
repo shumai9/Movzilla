@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import '../style/List.css'
 
-class List extends Component{  
+class List extends Component{
+  handleSelection = (e) =>{ 
+    this.props.onSelectedMovie(e)
+  }  
   render(){
     const data = this.props.movies;
     return(
@@ -9,13 +13,14 @@ class List extends Component{
         <h1>Top Featured Movies</h1>
           <ul>
           { data ?
-            (Object.keys(data).map((line) =>{
+            (Object.values(data).map((movie) =>{
               return(
-                <li key={line}>
-                  <a href="#">
-                    {data[line].Title}
-                  </a>
-                </li>
+                <Link to="/movies"
+                  key={movie.imdbID}
+                  onClick={this.handleSelection}
+                >
+                  <li value={movie.imdbID}>{movie.Title}</li>
+                </Link>
               ) 
             })
             ) : (

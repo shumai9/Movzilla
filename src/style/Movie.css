@@ -21,3 +21,7 @@
 div.wrapper img {
   border-radius: 1rem;
 }
+.screen {
+  width: auto;
+  background: #000;
+}
