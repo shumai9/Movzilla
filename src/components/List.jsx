@@ -11,15 +11,15 @@ class List extends Component{
           { data ?
             (Object.keys(data).map((line) =>{
               return(
-                <li>
-                  <a href="#" key={line}>
+                <li key={line}>
+                  <a href="#">
                     {data[line].Title}
                   </a>
                 </li>
               ) 
             })
             ) : (
-            null
+              null
             )
           }
         </ul>

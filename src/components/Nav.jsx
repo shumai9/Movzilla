@@ -56,11 +56,11 @@ class Nav extends React.Component {
           <NavLink exact to={"/home"}>
             HOME
           </NavLink>
-          <NavLink exact to={"/movies"}>
-            MOVIES
-          </NavLink>
           <NavLink exact to={"/about"}>
             ABOUT
+          </NavLink>
+          <NavLink exact to={"/movies"}>
+            MOVIES
           </NavLink>
           <NavLink exact to={"/new_releases"}>
             NEW RELEASES

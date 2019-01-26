@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { 
   BrowserRouter,
   Route,
-  Switch,
-  Redirect
+  Switch
 } from 'react-router-dom';
 import Movie from './components/Movie';
 import List from './components/List';
@@ -13,6 +12,8 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import './style/App.css';
+
+const Apikey = `${process.env.REACT_APP_OMDb_API_KEY}`;
 
 class App extends Component {
   constructor(props){

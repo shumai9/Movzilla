@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+#Api-key for OMDb
+.env
 # dependencies
 /node_modules
 /.pnp

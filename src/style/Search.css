@@ -1,0 +1,12 @@
+ form {
+    width: auto;
+    position: absolute;
+    top: 10.5rem; 
+    right: 1rem;
+ }
+ 
+ .search, .suggestions{
+    width: 20rem;
+    
+    
+}
