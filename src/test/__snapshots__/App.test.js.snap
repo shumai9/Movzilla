@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <nav
+      className="nav-bar "
+    >
+      <div
+        className="list"
+        onClick={[Function]}
+      >
+        <a
+          aria-current={null}
+          href="/home"
+          onClick={[Function]}
+        >
+          HOME
+        </a>
+        <a
+          aria-current={null}
+          href="/about"
+          onClick={[Function]}
+        >
+          ABOUT
+        </a>
+        <a
+          aria-current={null}
+          href="/movies"
+          onClick={[Function]}
+        >
+          MOVIES
+        </a>
+        <a
+          aria-current={null}
+          href="/new_releases"
+          onClick={[Function]}
+        >
+          NEW RELEASES
+        </a>
+        <a
+          aria-current={null}
+          href="/contact"
+          onClick={[Function]}
+        >
+          CONTACT
+        </a>
+      </div>
+    </nav>
+    <h1
+      className="App-logo"
+    >
+      MOVzila
+    </h1>
+  </header>
+  <div
+    className="container"
+  >
+    <div
+      className="movie-list"
+    >
+      <h1>
+        Top Featured Movies
+      </h1>
+      <ul />
+    </div>
+    <div
+      className="main"
+    />
+  </div>
+</div>
+`;

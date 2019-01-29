@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import renderer from 'react-test-renderer';
 import List from '../components/List';
 
 it('renders with out  failing', () =>{
@@ -7,3 +8,10 @@ it('renders with out  failing', () =>{
   ReactDOM.render(<List />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+it('renders correctly', () =>{
+  const tree = renderer
+    .create(<List />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+}); 
+  

@@ -4,9 +4,9 @@ import '../style/Tray.css';
 class Tray extends Component {
   render() {
     const movieObject = this.props.singleMovie;
-    const actors =  movieObject.Actors;
-    const actorList = actors ? actors.split(",") : ["try again"]
-    console.log('Tray', actors  )
+    const actors = movieObject ? movieObject.Actors : '';
+    const actorList = actors ? actors.split(",") : ["try again"];
+    console.log('Tray', actorList  )
     return(
       movieObject ?
       <div className="tray">

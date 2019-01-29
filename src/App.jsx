@@ -13,6 +13,9 @@ import About from './components/About';
 import Contact from './components/Contact';
 import './style/App.css';
 
+const Api_key = `${process.env.REACT_APP_OMDb_API_KEY}`;
+const API_URL = 'http://www.omdbapi.com/?'
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -24,7 +27,8 @@ class App extends Component {
     }
   }
   componentDidMount(){
-    fetch("http://www.omdbapi.com/?s='the'&type=movie&page=10&apikey=60f51f50")
+    //gets random movies to display
+    fetch(`${API_URL}s='the'&type=movie&page=10&apikey=${Api_key}`)
     .then(res => res.json())
     .then(result => {
       if(result.Response){

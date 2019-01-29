@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="movies"
+>
+  <h1>
+    Movies
+  </h1>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        className="search title"
+        name="search_bar"
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="type movie title here"
+        type="text"
+      />
+      <button
+        type="submit"
+      >
+         Search 
+      </button>
+    </form>
+    <p>
+      Total search results: 
+      0
+    </p>
+  </div>
+  <div
+    className="wrapper"
+  >
+    <div
+      className="screen"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;

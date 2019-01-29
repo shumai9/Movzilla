@@ -1,6 +1,13 @@
 .movies{
   width: auto;
 }
+.movies form, .newly p{
+  z-index: 100;
+  position: absolute;
+  right: 1rem;
+  top: 5rem;
+  display: flex;
+}
 .main, .movie-list {
   flex: 1 2 auto;
   background: rgba(156, 146, 146, 0.28);

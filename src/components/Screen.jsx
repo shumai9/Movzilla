@@ -7,7 +7,9 @@ class Screen extends Component {
 
 	render(){
 		const data = this.props.featured;
-		const selected =  Object.values(data).filter(movie => movie.Title === this.props.movie);
+		const selected =  data ? 
+			Object.values(data)
+			.filter(movie => movie.Title === this.props.movie) : [];
 		console.log('your choice', selected);
 		return(
 			<div className="screen" onClick={this.handleLinkClose}>
