@@ -5,7 +5,8 @@
    color: #000;
    list-style: none;
    text-decoration: none;
-   text-align: left; 
+   text-align: center;
+   outline: 0;
 }
 div.movie-list li:hover {
   background: #659914;

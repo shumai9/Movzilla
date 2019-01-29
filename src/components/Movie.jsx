@@ -46,7 +46,6 @@ class Movie extends Component {
     }else{
       return
     }
-
     console.log('from handler', req);
   }
 
@@ -55,48 +54,49 @@ class Movie extends Component {
     const movie= this.props.movie;
     const featured= this.props.featured;
   
-  return(
-    <div className="movies">
-      <h1>Movies</h1>
-      <div>
-       <form onSubmit={this.handleSearch}>
-        <input 
-          className="search title"
-          value={this.state.search_bar}
-          onChange={this.handleSearch}
-          onFocus={this.clearSearch}
-          type="text"  
-          name="search_bar"
-          placeholder="type movie title here"
-        />
-        <button type="submit"> Search </button>
-        </form>
-        <p>Total search results: {this.state.count}</p>
+    return(
+      <div className="movies">
+        <h1>Movies</h1>
+        <div>
+        <form onSubmit={this.handleSearch}>
+          <input 
+            className="search title"
+            value={this.state.search_bar}
+            onChange={this.handleSearch}
+            onFocus={this.clearSearch}
+            type="text"  
+            name="search_bar"
+            placeholder="type movie title here"
+          />
+          <button type="submit"> Search </button>
+          </form>
+          <p>Total search results: {this.state.count}</p>
+        </div>
+        <div className="wrapper" >
+          { this.state.data ? 
+            (Object.values(this.state.data).map((line) =>{
+              return(
+                <div className="film" key={line.imdbID}> 
+                  <h2 >{line.Title}</h2>
+                  <img 
+                    src={line.Poster}
+                    alt={`${line.Title}`}
+                  />          
+                  <p>{line.Year}</p> 
+                  <p>{line.Type}</p>
+                </div>
+              ) 
+            })
+            ) : (
+              <Screen
+                movie={movie}
+                featured={featured} 
+                clearSelected={clearSelected}
+              />
+            )
+          }
+        </div>      
       </div>
-      <div className="wrapper" >
-        { this.state.data ? 
-          (Object.values(this.state.data).map((line) =>{
-            return(
-              <div className="film" key={line.imdbID}> 
-                <h2 >{line.Title}</h2>
-                <img 
-                  src={line.Poster}
-                  alt={`${line.Title}`}
-                />          
-                <p>{line.Year}</p> 
-                <p>{line.Type}</p>
-              </div>
-            ) 
-          })
-          ) : (
-            <Screen 
-            movie={movie}
-            featured={featured} 
-            clearSelected={clearSelected} />
-          )
-        }
-      </div>      
-    </div>
     );
   }
 }

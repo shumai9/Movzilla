@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import Movie from './components/Movie';
 import List from './components/List';
-import Newly from './components/Newly'
+import Newly from './components/Newly';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import About from './components/About';
@@ -64,38 +64,50 @@ class App extends Component {
             />
             <div className="main">            
               <Switch>
-                <Route exact path="/" render={null} />
+                <Route exact path="/"
+                  render={null}
+                />
                 <Route exact path="/home"
-                  render={props => (
-                    <Home {...props}/>
-                  )}
+                  render={
+                    props => (
+                      <Home {...props}/>
+                    )
+                  }
                 />
                 <Route path="/about"
-                  render={props => (
-                    <About {...props}/>
-                  )}
+                  render={
+                    props => (
+                      <About {...props}/>
+                    )
+                  }
                 />
                 <Route path="/new_releases"
-                  render={props => (
-                    <Newly {...props}/>
-                  )}
+                  render={
+                    props =>(
+                      <Newly {...props}/>
+                    )
+                  }
                 />
                 <Route path="/contact"
-                  render={props => (
-                    <Contact {...props}/>
-                  )}
+                  render={
+                    props => (
+                      <Contact {...props}/>
+                    )
+                  }
                 />
                 <Route path="/movies"
-                  render={props => (
-                    <Movie
-                      featured={this.state.data}
-                      movie={this.state.selectedMovie}
-                      clearSelected={this.clearSelection} 
-                    />
-                  )}
+                  render={
+                    props => (
+                      <Movie
+                        featured={this.state.data}
+                        movie={this.state.selectedMovie}
+                        clearSelected={this.clearSelection} 
+                      />
+                    )
+                  }
                 />                
               </Switch>
-              </div>
+            </div>
           </div>
         </div>
       </BrowserRouter>

@@ -1,0 +1,31 @@
+.newly {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+}
+.newly a {
+    flex: auto;
+    align-items: space-around; 
+    
+}
+.newly form, .newly p{
+    z-index: 100;
+    position: absolute;
+    right: 0;
+    top: 4rem;
+    display: flex;
+}
+.newly p {
+    left: 0;
+    z-index: 100;
+}
+.tray {
+    display: flex;
+    background: rgb(158, 123, 123);
+    margin: 20px;
+}
+.tray h1,h5, .tray ul, .tray li, .tray p {
+    flex: auto;
+    color: #fff;
+}
